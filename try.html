@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:grey">
+
+
+<section style="text-align:center">
+<p>Enter a number between 0 and 1</p>
+
+<input id="demo" type="text"><br>
+<br>
+<button type="button" onclick="myFunction()">Get Results</button>
+<p id="p"></p>
+</section>
+
+<script>
+function myFunction() {
+  var message, num;
+  message = document.getElementById("p");
+  message.innerHTML = "";
+  num = document.getElementById("demo").value;
+  try { 
+    if(num == "") throw "empty";
+    if(isNaN(num)) throw "not a number";
+    num = Number(num);
+    if(num == 0.9){
+        throw "Grade is A for "+num;
+    } 
+    if(num == 0.8){
+        throw "Grade is B for "+num;
+    } 
+    if(num == 0.7){
+        throw "Grade is C for "+num;
+
+    } 
+    if(num == 0.6){
+        throw "Grade is D for "+num;
+
+    } 
+    if(num == 0.6){
+        throw "Grade is F for "+num;
+
+    } 
+    if(num > 1.0 || num < 0.0){
+        throw "Error: Out of bounds";
+
+    }
+    else{
+        throw "Not within the range of Grades Table";
+    } 
+
+  }
+  catch(err) {
+    message.innerHTML = "Result: " + err;
+  }
+}
+</script>
+
+</body>
+</html>
